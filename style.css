@@ -63,7 +63,7 @@ nav{
 .nav-container .links a{
     position: relative;
     font-size: 1.2rem;
-    color: black;
+    color: rgb(0,102,102);
     text-decoration: none;
     font-weight: 500;
     transform: 0.3s linear;
@@ -76,7 +76,7 @@ nav{
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: rgb(109,67, 0);
+    background-color: rgb(0,102, 102);
     transition: 0.2s linear;
 }
 
@@ -103,7 +103,7 @@ nav{
 }
 
 .nav-container .links a:hover{
-    color: rgb(109,67, 0);
+    color: rgb(0,102, 102);
 }
 
 .dropdown{
@@ -183,35 +183,7 @@ section{
 }
 
 .typewriter span::before{
-    content: "Developer";
-    animation: words 15s infinite;
-}
-
-.typewriter span::after{
-    content: "";
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    animation:  cursor 0.6s linear infinite;
-}
-
-@keyframes cursor {
-    to{
-        border-left: 3px solid #b74b4b;
-    }
-}
-
-@keyframes words {
-    0%, 33%{
-        content: "Developer";
-    }
-    34%, 66%{
-        content: "Designer";
-    }
-    67%, 100%{
-        content: "Youtuber";
-    }
+    content: "Fashion Designer";
 }
 
 .content p{
@@ -306,6 +278,143 @@ section{
         width: 80%;
         margin-bottom: 0px;
     }
+}
+
+/* --- Gallery Additions for style.css --- */
+
+/* Allow the gallery section to scroll */
+.gallery-page-section {
+    height: auto; 
+    min-height: 90vh; /* Make sure it doesn't collapse on small content */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* We need to override the 'overflow: hidden' on the body for this page to scroll */
+    overflow-y: visible !important; 
+}
+
+/* Override the homepage's main container layout for the gallery grid */
+.gallery-main-container {
+    display: block; 
+    text-align: center;
+    width: 90%; /* Give a bit more room for the gallery */
+    margin: 0 auto;
+}
+
+.gallery-title {
+    /* Reusing your existing H1 styles, just centering it */
+    font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    /* Responsive Grid: min 250px wide columns, fits as many as possible */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Consistent spacing */
+    padding: 20px 0;
+}
+
+.gallery-item {
+    border-radius: 5px; 
+    overflow: hidden; 
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow like your social icons */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    /* Enforce a 1:1 aspect ratio using modern CSS */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* --- Lightbox Modal Styling --- */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 200; /* Ensure it is above everything, including nav */
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); /* Dark overlay */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    max-height: 85vh; 
+    object-fit: contain; 
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    font-size: 1rem;
+    color: rgb(254,215,173); /* Use your theme's light accent color */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(109,67, 0); /* Use your theme's primary color on hover */
+    text-decoration: none;
+}
+
+/* Media query for mobile view */
+@media (max-width: 884px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* Stack images on mobile */
+    }
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* Update the existing gallery title rule near the bottom of style.css */
+.gallery-title {
+    font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
+    margin-bottom: 40px;
+    margin-top: 20px;
+    /* Add this line to set the main title color */
+    color: rgb(0, 102, 102);
+    text-shadow: 0 0 8px rgba(0, 102, 102, 0.7);  
+}
+
+/* Keep the span rule you added before to highlight 'Work' in your existing theme color */
+.gallery-title span {
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
 }
 
 
