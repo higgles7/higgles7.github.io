@@ -97,14 +97,24 @@ nav{
     transition: 0.3s linear;
 }
 
-.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
-    background-color: rgb(109,67, 0);
-    color: white;
+.nav-container .contact-btn:hover {
+    /* Added the scaling effect */
+    scale: 1.1; 
+    /* Added the strong glow effect */
+    box-shadow: 0 0 40px rgb(0,102, 102);
+    /* Ensure background stays the accent color on hover */
+    background-color: transparent; 
+    border: 2px solid rgb(0,102, 102);
 }
 
-.nav-container .links a:hover{
+/* Ensure the link text remains white inside the button */
+.nav-container .contact-btn:hover a {
     color: rgb(0,102, 102);
 }
+
+/* .nav-container .links a:hover{
+    color: rgb(0,102, 102);
+} */
 
 .dropdown{
     z-index: 100;
@@ -417,4 +427,7 @@ section{
     text-shadow: 0 0 10px rgb(109,67, 0);
 }
 
-
+/* Disable the underline animation specifically for the Contact Us button link */
+.nav-container .contact-btn a::before {
+    width: 0% !important; 
+}
