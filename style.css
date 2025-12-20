@@ -13,8 +13,10 @@ html{
 
 body{
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    /*height: 100vh;*/
+    /*overflow: hidden;*/
+    min-height:100vh;
+    overflow-y: auto;
     background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
 }
 
@@ -144,7 +146,8 @@ nav{
 
 section{
     width: 100%;
-    height: 90vh;
+    /*height: 90vh;*/
+    height: auto;
 }
 
 .main-container{
@@ -324,7 +327,6 @@ section{
 
     /*added for different sized images*/
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-flow: dense;
     gap: 20px; /* Consistent spacing */
     padding: 20px 0;
 }
@@ -345,9 +347,20 @@ section{
 .gallery-item img {
     width: 100%;
     /* Enforce a 1:1 aspect ratio using modern CSS */
-    /*aspect-ratio: 1 / 1;*/ 
+    aspect-ratio: 1 / 1;
     object-fit: cover; 
     display: block;
+}
+
+/* The "Full Width" Modifier */
+.gallery-item.full-width {
+    grid-column: 1 / -1; /* Spans from the first line to the last line */
+}
+
+.gallery-item.full-width img {
+    aspect-ratio: auto; /* Allow this specific image to show its full shape */
+    height: auto;
+    max-height: 500px; /* Optional: prevents it from being TOO tall */
 }
 
 
