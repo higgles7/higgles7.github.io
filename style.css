@@ -320,7 +320,11 @@ section{
 .gallery-container {
     display: grid;
     /* Responsive Grid: min 250px wide columns, fits as many as possible */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+
+    /*added for different sized images*/
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-flow: dense;
     gap: 20px; /* Consistent spacing */
     padding: 20px 0;
 }
@@ -341,7 +345,7 @@ section{
 .gallery-item img {
     width: 100%;
     /* Enforce a 1:1 aspect ratio using modern CSS */
-    aspect-ratio: 1 / 1; 
+    /*aspect-ratio: 1 / 1;*/ 
     object-fit: cover; 
     display: block;
 }
@@ -430,4 +434,27 @@ section{
 /* Disable the underline animation specifically for the Contact Us button link */
 .nav-container .contact-btn a::before {
     width: 0% !important; 
+}
+
+/*added for different sized images*/
+/* These tell the item how many grid slots to take up */
+.gallery-item.wide {
+    grid-column: span 2;
+}
+
+.gallery-item.tall {
+    grid-row: span 2;
+}
+
+.gallery-item.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Ensure mobile view stays clean */
+@media (max-width: 884px) {
+    .gallery-item.wide, .gallery-item.tall, .gallery-item.big {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
 }
