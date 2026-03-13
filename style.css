@@ -43,7 +43,6 @@ nav{
 
 .logo span{
     color: rgb(109,67, 0);
-    text-shadow: 0 0 10px rgb(109,67, 0);
 }
 
 .hamburg, .cancel{
@@ -179,7 +178,6 @@ section{
 
 .content h1 span{
     color: rgb(109,67, 0);
-    text-shadow: 0 0 10px rgb(109,67, 0);
 }
 
 .content .typewriter{
@@ -190,7 +188,6 @@ section{
 .content .typewriter span{
     color: rgb(109,67, 0);
     font-size: 2.5rem;
-    text-shadow: 0 0 5px rgb(109,67, 0);
     position: relative;
     transition: 0.3s linear;
 }
@@ -433,15 +430,11 @@ section{
     font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
     margin-bottom: 40px;
     margin-top: 20px;
-    /* Add this line to set the main title color */
-    color: rgb(0, 102, 102);
-    text-shadow: 0 0 8px rgba(0, 102, 102, 0.7);  
 }
 
 /* Keep the span rule you added before to highlight 'Work' in your existing theme color */
 .gallery-title span {
     color: rgb(109,67, 0);
-    text-shadow: 0 0 10px rgb(109,67, 0);
 }
 
 /* Disable the underline animation specifically for the Contact Us button link */
