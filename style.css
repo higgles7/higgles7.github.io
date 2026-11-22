@@ -85,7 +85,7 @@ nav{
     width: 100%;
 }
 
-.nav-container .contact-btn{
+/* .nav-container .contact-btn{
     background-color: rgb(109,67, 0);
     padding: 5px 20px;
     border-radius: 20px;
@@ -95,6 +95,23 @@ nav{
 
 .nav-container .contact-btn a{
     color: white;
+    transition: 0.3s linear;
+} */
+
+.nav-container .contact-btn {
+    background-color: rgb(109, 67, 0);
+    padding: 0; /* moved to the <a> tag below */
+    border-radius: 20px;
+    border: 2px solid rgb(109, 67, 0);
+    transition: 0.2s linear;
+    overflow: hidden; /* keeps the rounded corners clean on hover */
+}
+
+.nav-container .contact-btn a {
+    display: block;
+    padding: 5px 20px;
+    color: white;
+    text-decoration: none;
     transition: 0.3s linear;
 }
 
